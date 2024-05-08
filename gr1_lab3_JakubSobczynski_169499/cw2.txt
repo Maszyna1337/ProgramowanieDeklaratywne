@@ -1,0 +1,16 @@
+T1			T2			TYP								WARUNEK
+policjant		policjant		atom(true)							true
+X			Y			zmienna(true)							true
+papier			kartka			atom(true)							false
+125			125			number(całkowita,stała)						true
+rzeczownik(alfa);	alfa			compound(jedna zmienna wolna)					false
+litera(C) 		słowo(litera)		compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	false
+slowo(C)		slowo(ania,ewa)		compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	false
+jedzie(student,rower);	jedzie(student,X);	compound(bez zmiennych wolnych),compound(jedna zmienna wolna)	true
+'student' 		student			atom(true)							true
+para(X,Y)		para(jacek,ewa) 	compound(dwie zmienne wolne),compound(bez zmiennych wolnych) 	true
+f(X,X)			f(a,b)			compound(jedna zmienna wolna),compound(bez zmiennych wolnych)	true
+f(X,a(b,c))		f(Z,a(Z,c))		compound(jedna zmienna wolna)					true
+fu(a,X,f(g(Y))		fu(V,h(Z,V),f(V))	compound(dwie zmienne wolne)					false
+fu(a,X,f(g(Y))		fu(Y,f(Z),f(Z)) 	compound(dwie zmienne wolne)					true
+fu(f(X),Y,a)    	fu(f(g(Y)),c,Z))	compound(dwie zmienne wolne)true				true
